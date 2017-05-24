@@ -7,19 +7,19 @@ var Place = require('../model/Place');
 
 router.get('/get_list', function(req, res, next) {
   //res.render('index', { title: 'Express' });
-  var pl = new Place({
-    nameplace:"Sonata Coffee Acoustic lá",
-    address:"Gần ngã 3 trường Khoa học Tự nhiên",
-    //10.873711, 106.801049
-    location:{lat:10.874986, long:106.799488},
-    type:0,
-    description:"Cà phê , Sữa chua mít"
-  });
-  pl.save((err, pla)=>{
-    if (err)
-    console.log(err);
-    res.json(pla);
-  })
+  // var pl = new Place({
+  //   nameplace:"Sonata Coffee Acoustic",
+  //   address:"Gần ngã 3 trường Khoa học Tự nhiên",
+  //   //10.873711, 106.801049
+  //   location:{lat:10.874986, long:106.799488},
+  //   type:0,
+  //   description:"Cà phê , Sữa chua mít"
+  // });
+  // pl.save((err, pla)=>{
+  //   if (err)
+  //   console.log(err);
+  //   res.json(pla);
+  // })
   Place.find({}, {nameplace:1, address:1, location:1, type:1, menu:1}, function(err, place){
       if (err) 
         throw err;
