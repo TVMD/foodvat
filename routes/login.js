@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../model/User');
 
-router.post('/login', function(req, res) {
+router.post('/', function(req, res) {
   var userObject = req.body;
   console.log(req.body);
   User.findOne({id_fb: userObject.id_fb }, function(err, user) {
