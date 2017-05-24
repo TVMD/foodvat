@@ -29,7 +29,7 @@ false nếu tìm kiếm trong database thất bại
 
 2/load quán :
 
-    /get_list
+    /places/get_list
 
 Get, ko tham số, 
 
@@ -39,7 +39,7 @@ Get, ko tham số,
 
 3/tìm kiếm : theo tên quán, hoặc theo món ăn
 
-    /get_list_search/:keyword
+    /places/get_list_search/:keyword
 
 Get, truyền tham số keyword ở link
 
@@ -47,8 +47,8 @@ Get, truyền tham số keyword ở link
 
 (*) chức năng này là : vừa đăng nhập xong, vào app, hiển thị lên 1 cái dialog(chả biết phải ko :3) : “Hãy để tôi gợi ý cho bạn nhé” rồi cho chọn “Ăn” hoặc “Uống”. chọn xong sẽ hiển thị ra thông tin quán, nếu ng dùng ko thích có thể chọn random tiếp :v
 
-    /get_random_food
+    /places/get_random_food
 
-    /get_random_drink
+    /places/get_random_drink
 
 
