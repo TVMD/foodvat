@@ -51,17 +51,8 @@ Get, truyền tham số keyword ở link
 
     /places/get_random_drink
 
-5/ tạo 1 quán mới : 
-    /places/create
-  Hàm post, truyền các tham số (tên theo phía sau placeObject)
-    nameplace:placeObject.nameplace,
-    address:placeObject.address,
-    location:{
-      lat:placeObject.lat,
-      long:placeObject.long
-    },
-    type:placeObject.type,         //0:eat, 1:drink
-    founder_id_fb:placeObject.founder_id_fb,
-    description:placeObject.menu,
-    phone:placeObject.phone
+5/ load list ảnh : 
+    /list_image/:id_place
+  Hàm get, truyền các tham số id_place
+    
 
