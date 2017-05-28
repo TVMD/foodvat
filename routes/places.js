@@ -5,7 +5,7 @@ var Image = require('../model/Image');
 
 var path = require('path');
 var multer  = require('multer');
-//var upload = multer({ dest: path.join(__dirname, '../public/uploads/')});
+
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     console.log('run',file);
@@ -15,12 +15,9 @@ var storage = multer.diskStorage({
     console.log(file);
     cb(null, file.fieldname + '_' + Date.now() + path.extname(file.originalname));
   }
-})
-
- 
+}) 
 var upload = multer({ storage: storage })
 
-// var upload = multer({ dest: './public/uploads/'});
 
 //geo https://github.com/manuelbieh/geolib
 
@@ -120,6 +117,7 @@ router.get('/list_image/:id_place', function(req, res, next) {
 });
 
 router.post('/post_image', upload.single('avatar'), function (req, res,next) {
+  console.log(req.file);
   var imageObject = req.body;
   var newImage = new Image({
     id_place:imageObject.id_place,
