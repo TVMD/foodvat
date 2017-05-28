@@ -64,11 +64,16 @@ Get, truyền tham số keyword ở link
     /places/post_image
     
   Hàm post, gồm hình và các tham số : 
+  
     id_place:imageObject.id_place,
+    
     id_user:imageObject.id_user,
+    
     name_user:imageObject.name_user,
+    
     review:imageObject.review,
-    create: Date.now()
+    
+    create: Date.now()    
 
 Nếu thành công, trả về "success"
   
