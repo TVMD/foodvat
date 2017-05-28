@@ -1,7 +1,6 @@
 var db = require('../model/config-db');
 var mongoose = require('mongoose');
 var Place = new mongoose.Schema({
-    id_place: String,
     nameplace:{type:String},
     address:String,
     location:{
@@ -9,17 +8,15 @@ var Place = new mongoose.Schema({
       long:Number
     },
     type:Number,         //0:eat, 1:drink
-    number_online:{
-      type:Number,
-      default:0
-    },
-    star:Number,
+    star:{type:Number, default:0},
     founder_id_fb:String,
     create:Date,
-    members:{ type : [] , default : [] },
+    avatar:{type:String, default:''},
     description:{type:String},
     menu:{type:[], default:[]},
-    images:[]
+    images:[],
+    opentime:{type:String, default:"8AM - 10PM"},
+    phone:String
 });
 Place.index({'$**': 'text'})
 var exPlace = db.model('Place', Place);
