@@ -52,7 +52,26 @@ Get, truyền tham số keyword ở link
     /places/get_random_drink
 
 5/ load list ảnh : 
-    /list_image/:id_place
+
+    /places/list_image/:id_place
+    
   Hàm get, truyền các tham số id_place
+  
+  Trả về danh sách image goồm tên hình, comment, .... Để get hình, gắn thêm link trước tên hình : "foodvat.herokuapp.com/uploads/" + ten_hinh
+  
+6/ Up hình ảnh :
+    
+    /places/post_image
+    
+  Hàm post, gồm hình và các tham số : 
+    id_place:imageObject.id_place,
+    id_user:imageObject.id_user,
+    name_user:imageObject.name_user,
+    review:imageObject.review,
+    create: Date.now()
+
+Nếu thành công, trả về "success"
+  
+  
     
 
