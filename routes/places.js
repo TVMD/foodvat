@@ -70,18 +70,18 @@ router.get('/get_random_food', function(req, res, next) {
   Place.find({type:0}).count({},function( err, count_food){
         //console.log( "Number of users:", count );
         var skip = getRandomInt(0,count_food - 1);
-            console.log(count_food + " " + skip);
-            var result = Place.find()
-            .sort({type:1})
-            .skip(skip)
-            .limit(1)
-            .exec(function(err, place){
-                if (err)
-                {
-                  console.log(err);
-                }        
-                  res.json(place);
-            });
+        console.log(count_food + " " + skip);
+        var result = Place.findOne()
+        .sort({type:1})
+        .skip(skip)
+        .limit(1)
+        .exec(function(err, place){
+            if (err)
+            {
+              console.log(err);
+            }        
+              res.json(place);
+        });
     
   });
 });
@@ -91,7 +91,7 @@ router.get('/get_random_drink', function(req, res, next) {
         var count = Place.find({type:1}).count({},function( err, count){
             var skip = getRandomInt(count_food,count_food + count-1);
             console.log(count_food + " " + count + " " + skip);
-            var result = Place.find()
+            var result = Place.findOne()
             .sort({type:1})
             .skip(skip)
             .limit(1)
