@@ -1,7 +1,7 @@
 # foodgo
 Docs API
 
-    foodvat.herokuapp.com
+    128.199.85.232:3000
 
 1/Đăng nhập (chỉ bằng facebook), hình thức thôi
 
